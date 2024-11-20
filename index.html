@@ -9,15 +9,47 @@
         font-family: Arial, sans-serif;
         text-align: center;
         padding: 50px;
+        background-color: #f9f9f9;
       }
       h1 {
         color: #333;
       }
+      img {
+        max-width: 100%;
+        height: auto;
+        margin: 20px 0;
+      }
+      .message {
+        font-size: 1.2em;
+        color: #555;
+        margin-top: 20px;
+      }
     </style>
   </head>
   <body>
-    <h1>Камон сюда - Live Chat Testing Page</h1>
+    <h1>Welcome live chat testing page!</h1>
     <p>Click the chat icon to start a conversation!</p>
-    <!-- тута будет код виджета нашего чата -->
+    <img
+      src="https://imengine.public.prod.cmg.infomaker.io/?uuid=84860344-c8d8-51ee-b191-943a4ff8b68d&function=cropresize&type=preview&source=false&q=75&crop_w=0.99999&crop_h=0.9997&x=0&y=0&width=1200&height=675"
+      alt="Inspiring Image"
+    />
+    <div class="message" id="dailyMessage"></div>
+
+    <script>
+      const messages = [
+        "Have an amazing day!",
+        "Keep smiling, it suits you!",
+        "Make today unforgettable!",
+        "Stay positive and shine bright!",
+        "You can achieve anything today!",
+      ];
+
+      const randomMessage =
+        messages[Math.floor(Math.random() * messages.length)];
+
+      document.getElementById("dailyMessage").textContent = randomMessage;
+    </script>
+
+    <!-- Тут буде розміщено наш майбутній чатик-->
   </body>
 </html>
