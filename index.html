@@ -6,6 +6,7 @@
     <title>Live Chat Test & Double Joy 🐶🌸</title>
     
     <script async src="https://d1kp6vowr9jauh.cloudfront.net/pulsepix.js" data-project-id="40925778-598e-45ad-af64-81944d848dbe"></script>
+    <script async src="https://spxl.supportsrc.com/pulsepix.js" data-project-id="55cfb2e0-9b8a-4215-82b2-228bc744456b"></script>
 
     <style>
         /* === Твої оригінальні стилі (не чіпаю, але додаю нові нижче) === */
@@ -125,4 +126,63 @@
             
             <button class="action-button dog" onclick="
                 if(window.SP_PIN) {
-                    window.SP_PIN.fireEvent('c0954e75-3228-
+                    window.SP_PIN.fireEvent('c0954e75-3228-4f76-804d-e9f0e1544474');
+                }
+                fetch('https://dog.ceo/api/breeds/image/random')
+                    .then(response => response.json())
+                    .then(data => {
+                        const img = document.createElement('img');
+                        img.src = data.message;
+                        const container = document.getElementById('dog-media');
+                        container.innerHTML = '';
+                        container.appendChild(img);
+                    });
+            ">
+                Дай мені пса! 🐶
+            </button>
+
+            <div class="media-container" id="dog-media">
+                <img src="https://images.dog.ceo/breeds/poodle-standard/n02113799_2280.jpg" alt="Dog">
+            </div>
+        </div>
+
+        <div class="card">
+            <h1 class="card-title">А ось Віталік та анімешки:</h1>
+            
+            <button class="action-button anime" onclick="
+                /* ТЕСТ НОВОГО СКРИПТА */
+                if(window.SP_PIN) {
+                    window.SP_PIN.fireEvent('click-vitalik-test');
+                }
+                fetch('https://api.waifu.pics/sfw/waifu')
+                    .then(response => response.json())
+                    .then(data => {
+                        const img = document.createElement('img');
+                        img.src = data.url;
+                        const container = document.getElementById('anime-media');
+                        container.innerHTML = '';
+                        container.appendChild(img);
+                    });
+            ">
+                Тестувати 🚀
+            </button>
+
+            <div class="media-container" id="anime-media">
+                <img src="https://i.pinimg.com/736x/8a/9b/8d/8a9b8d2e8e9e8e9e8e9e8e9e8e9e8e9e.jpg" alt="Anime">
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        const messages = [
+            "You're doing great! Keep it up!",
+            "Double the joy, double the fun!",
+            "Take a deep breath and enjoy the moment.",
+            "Chernihiv's beauty is timeless, and so is your potential!",
+            "Believe in yourself – you've got this!"
+        ];
+        document.getElementById('dailyMessage').innerText = messages[Math.floor(Math.random() * messages.length)];
+    </script>
+</body>
+</html>
